@@ -22,9 +22,9 @@ print(isna_news)
 print(irna_news)
 
 
-"""def index(request):
+def index(request):
     return render(request, 'news/index.html', {"isna_news": isna_news, "irna_news": irna_news})
-"""
+
 
 
 
