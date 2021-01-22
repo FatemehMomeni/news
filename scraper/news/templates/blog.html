@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 
 <head>
   <meta charset="UTF-8">
@@ -9,35 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-table, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-</style>
-  <style>
-* {
-  box-sizing: border-box;
-}
 
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 25%;
-  padding: 10px;
-  height: 600px; /* Should be removed. Only for demonstration */
-  text-align:center;
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
   <!-- Title -->
   <title>خبرخوان</title>
 
@@ -71,7 +43,7 @@ table, td {
           <nav class="classy-navbar justify-content-between" id="dentoNav">
 
             <!-- Logo -->
-            <a class="nav-brand" href="index.html"><img src="{% static 'news/img/core-img/favicon_news.jpg' %}" alt=""></a>
+            <a class="nav-brand" href="{% url 'blog' %}"><img src="{% static 'news/img/core-img/favicon_news.jpg' %}" alt=""></a>
 
             <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">
@@ -95,8 +67,6 @@ table, td {
               <!-- Nav End -->
             </div>
 
-            <!-- Booking Now Button -->
-
           </nav>
         </div>
       </div>
@@ -114,91 +84,140 @@ table, td {
       </div>
     </div>
   </div>
-  <div class="breadcumb--con">
+<!-- ----------------------------------------------------------------------------- -->
+  <!-- ***** Blog Area Start ***** -->
+  <section class="dento-blog-area section-padding-100-0 clearfix">
     <div class="container">
-      <h3>ایسنا</h3>
-      <p id="demo"></p>
-      <script>
-        var text = "";
-        var text = "";
-        var i;
-        <table id="myTable">
-        for (i = 0; i < isna_time_list.length; i++) {
-          text += isna_time_list[i] + "<br>";
-        }
-        document.getElementById("demo").innerHTML = text;
-        <tr>
-
-
-
-          <td>cell 1</td>
-          <td>cell 2</td>
-          <td>cell 3</td>
-          <td>cell 4</td>
-        </tr>
-      </table>
-</script>
-
-      <!--<h1>ایسنا</h1>
+      <div class="row">
+        <!-- Section Heading -->
+        <div class="col-12">
+          <div class="section-heading text-center">
+            <h2>خبرگزاری ایسنا</h2>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
 
       <div class="row">
-        <div class="column" style="background-color:#98AFC7;">
-          <h2>تاریخ</h2>
-          <p>{% for n in isna_time_list %}
-          <h5> {{n}}</h5>
-          {% endfor %}</p>
-        </div>
-        <div class="column" style="background-color:#ADDFFF;">
-          <h2>لینک</h2>
-          <p>{% for n in isna_url_list %}
-            <a href= {{n}}>لینک خبر</a>
-          {% endfor %}</p>
-        </div>
-        <div class="column" style="background-color:#82CAFF;">
-          <h2>متن</h2>
-          <p>{% for n in isna_p1_list %}
-          <h5> {{n}}</h5>
-          {% endfor %}</p>
-        </div>
-        <div class="column" style="background-color:#E0FFFF;">
-          <h2>تیتر</h2>
-          <p>{% for n in isna_h2_list %}
-          <h5> {{n}}</h5>
-          {% endfor %}</p>
-        </div>
-      </div>-->
 
+        <!-- Single Blog Item -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="single-blog-item mb-100" style="text-align:center;">
+            <h4>تاریخ خبر</h4>
+            <!-- Blog Content -->
+            {% for i in isna_time_list %}
+            <div class="blog-content" style="border: 1px solid black; background-color:#E0FFFF; text-align:center;">
+              <p>{{ i }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
 
+        <!-- Single Blog Item -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="single-blog-item mb-100" style="text-align:center;">
+            <h4>لینک خبر</h4>
+            <!-- Blog Content -->
+            {% for i in isna_url_list %}
+            <div class="blog-content" style="border: 1px solid black; background-color:#E0FFFF; text-align:center;">
+              <a href="{{ i }}">{{ i }}</a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Single Blog Item -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="single-blog-item mb-100" style="text-align:center;">
+            <h4>تیتر خبر</h4>
+            <!-- Blog Content -->
+            {% for i in isna_h2_list %}
+            <div class="blog-content" style="border: 1px solid black; background-color:#E0FFFF; text-align:center;">
+              <p>{{ i }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ***** Blog Area End ***** -->
+
+   <!-- ***** Blog Area Start ***** -->
+  <section class="dento-blog-area section-padding-100-0 clearfix">
+    <div class="container">
+      <div class="row">
+        <!-- Section Heading -->
+        <div class="col-12">
+          <div class="section-heading text-center">
+            <h2>خبرگزاری ایرنا</h2>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <!-- Single Blog Item -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="single-blog-item mb-100" style="text-align:center;">
+            <h4>تاریخ خبر</h4>
+            <!-- Blog Content -->
+            {% for i in irna_time_list %}
+            <div class="blog-content" style="border: 1px solid black; background-color:#E0FFFF; text-align:center;">
+              <p>{{ i }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Single Blog Item -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="single-blog-item mb-100" style="text-align:center;">
+            <h4>لینک خبر</h4>
+            <!-- Blog Content -->
+            {% for i in irna_url_list %}
+            <div class="blog-content" style="border: 1px solid black; background-color:#E0FFFF; text-align:center;">
+              <a href="{{ i }}">{{ i }}</a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Single Blog Item -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="single-blog-item mb-100" style="text-align:center;">
+            <h4>تیتر خبر</h4>
+            <!-- Blog Content -->
+            {% for i in irna_h2_list %}
+            <div class="blog-content" style="border: 1px solid black; background-color:#E0FFFF; text-align:center;">
+              <p>{{ i }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ***** Blog Area End ***** -->
+
+<!-- ***************************************************************************** -->
     </div>
   </div>
   <section class="dento-blog-area mt-50">
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-8">
-
         </div>
-
-        <!-- Dento Sidebar Area -->
-
-            <!-- Single Widget Area -->
-
-
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- *****Blog Area End ***** -->
-
-  <!-- ***** Footer Area Start ***** -->
 
 
-
-    <!-- Copywrite Area -->
-
-  <!-- ***** Footer Area End ***** -->
-
-  <!-- ******* All JS ******* -->
   <!-- jQuery js -->
   <script src="{% static 'news/js/jquery.min.js' %}"></script>
   <!-- Popper js -->
